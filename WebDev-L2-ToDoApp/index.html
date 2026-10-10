@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1220">
+<meta name="description" content="A clean, responsive to-do app to plan your day.">
+<title>Daymark — To-Do App</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<div class="glow glow-a"></div><div class="glow glow-b"></div>
+<main class="app-shell">
+<header class="topbar">
+<a class="brand" href="#" aria-label="Daymark home"><span class="brand-icon">✓</span><span>daymark<span class="brand-dot">.</span></span></a>
+<div class="date-chip"><span class="live-dot"></span> YOUR SPACE TO FOCUS</div>
+</header>
+<section class="welcome">
+<div><p class="eyebrow">A LITTLE PROGRESS, EVERY DAY</p><h1>Make room for<br><span>what matters.</span></h1><p class="welcome-copy">Get it out of your head and into your day. One task at a time.</p></div>
+<div class="day-card"><span class="day-card-label">YOUR DAY</span><strong id="todayLabel">TODAY</strong><span class="day-card-line"></span><span class="day-card-note">Start where you are.</span></div>
+</section>
+<section class="workspace">
+<div class="main-panel">
+<div class="panel-heading"><div><p class="eyebrow">YOUR TASK LIST</p><h2>Today's focus</h2></div><span class="task-count" id="taskCount">0 TASKS</span></div>
+<form id="taskForm" class="add-form">
+<label class="sr-only" for="taskInput">New task</label><input id="taskInput" name="task" type="text" maxlength="140" placeholder="What needs to get done?" autocomplete="off" required>
+<button type="submit" aria-label="Add task"><span>+</span> Add task</button>
+</form>
+<div class="filters" role="group" aria-label="Filter tasks"><button type="button" class="filter active" data-filter="all">All <span id="allCount">0</span></button><button type="button" class="filter" data-filter="active">To do <span id="activeCount">0</span></button><button type="button" class="filter" data-filter="completed">Completed <span id="completedCount">0</span></button></div>
+<ul class="task-list" id="taskList" aria-live="polite"></ul>
+<div class="empty-state" id="emptyState"><span class="empty-symbol">✳</span><h3>Clear space, clear mind.</h3><p>Add your first task above and make a little progress.</p></div>
+<div class="panel-footer"><span id="footerMessage">Your tasks stay saved in this browser.</span><button type="button" id="clearCompleted" class="clear-completed">Clear completed</button></div>
+</div>
+<aside class="side-panel">
+<div class="progress-ring" id="progressRing" style="--progress:0deg"><div class="ring-inner"><strong id="progressPercent">0%</strong><span>COMPLETE</span></div></div>
+<h3>A steady pace.</h3><p class="side-copy" id="progressMessage">Every small step counts. Add a task to get started.</p>
+<div class="side-divider"></div><div class="mini-stat"><span>Still to do</span><strong id="remainingStat">0</strong></div><div class="mini-stat"><span>Finished</span><strong id="finishedStat">0</strong></div>
+<div class="tip"><span>✦ A SMALL REMINDER</span><p>You don't have to do everything today. Just the next thing.</p></div>
+</aside>
+</section>
+<footer class="footer"><span>Designed for calmer days.</span><span>HTML <b>·</b> CSS <b>·</b> JAVASCRIPT</span></footer>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body></html>
