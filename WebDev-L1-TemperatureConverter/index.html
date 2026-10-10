@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A responsive temperature converter for Celsius, Fahrenheit and Kelvin.">
+<title>Tempora — Temperature Converter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark"><i></i><i></i><i></i></span><span>tempora<span class="brand-dot">.</span></span></a>
+  <span class="topbar-label"><span class="status-dot"></span> Quick conversion tool</span>
+</header>
+<main class="page-shell">
+  <section class="intro">
+    <div class="eyebrow"><span class="eyebrow-line"></span> LEVEL 1 · TASK 3</div>
+    <h1>Every degree,<br><span>made simple.</span></h1>
+    <p class="intro-copy">Convert temperatures in seconds. Clear results, no guesswork — just choose your units and let Tempora do the math.</p>
+    <div class="unit-pills"><span>°C <small>Celsius</small></span><span>°F <small>Fahrenheit</small></span><span>K <small>Kelvin</small></span></div>
+  </section>
+  <section class="converter-card" aria-labelledby="converter-title">
+    <div class="card-heading"><div><p class="section-kicker">CONVERTER</p><h2 id="converter-title">Convert temperature</h2></div><div class="thermometer-icon">℃</div></div>
+    <form id="converter-form" novalidate>
+      <div class="field-label-row"><label for="temperature-input">Temperature value</label><button class="text-button" type="button" id="clear-button">Clear</button></div>
+      <div class="input-wrap"><input id="temperature-input" name="temperature" type="number" step="any" inputmode="decimal" placeholder="e.g. 25" aria-describedby="input-hint error-message"><span class="input-symbol" id="input-symbol">°C</span></div>
+      <p class="field-hint" id="input-hint">Enter a temperature value.</p><p class="error-message" id="error-message" role="alert" aria-live="polite"></p>
+      <div class="unit-grid">
+        <div class="unit-field"><label for="from-unit">From</label><select id="from-unit"><option value="celsius">Celsius (°C)</option><option value="fahrenheit">Fahrenheit (°F)</option><option value="kelvin">Kelvin (K)</option></select></div>
+        <button class="swap-button" type="button" id="swap-button" aria-label="Swap temperature units">⇄</button>
+        <div class="unit-field"><label for="to-unit">To</label><select id="to-unit"><option value="fahrenheit">Fahrenheit (°F)</option><option value="celsius">Celsius (°C)</option><option value="kelvin">Kelvin (K)</option></select></div>
+      </div>
+      <button class="convert-button" type="submit"><span>Convert temperature</span><span>↗</span></button>
+    </form>
+    <div class="result-panel" aria-live="polite" aria-atomic="true"><div class="result-topline"><span class="result-label">CONVERTED RESULT</span><button class="copy-button" type="button" id="copy-button" disabled>▢ Copy</button></div><div class="result-value" id="result-value">—</div><p class="result-description" id="result-description">Your result will appear here.</p></div>
+    <div class="quick-examples"><span class="quick-label">TRY A QUICK VALUE</span><div class="example-buttons"><button type="button" data-value="0">0°C · Freezing</button><button type="button" data-value="25">25°C · Room</button><button type="button" data-value="100">100°C · Boiling</button></div></div>
+  </section>
+  <section class="formula-strip"><div class="formula-intro"><span class="formula-icon">ƒx</span><div><h3>Behind the conversion</h3><p>Reliable formulas, every time.</p></div></div><div class="formula-item"><span>°C → °F</span><code>(°C × 9/5) + 32</code></div><div class="formula-item"><span>°F → °C</span><code>(°F − 32) × 5/9</code></div><div class="formula-item"><span>°C → K</span><code>°C + 273.15</code></div></section>
+</main>
+<footer class="footer"><span>Designed & built by <strong>Bhanu Prakash Dasoju</strong></span><span>Oasis Infobyte · Web Development · Level 1 Task 3</span></footer>
+</body>
+</html>
