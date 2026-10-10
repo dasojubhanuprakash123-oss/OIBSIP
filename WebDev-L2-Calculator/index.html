@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b1220">
+<meta name="description" content="A clean, responsive calculator built with HTML, CSS, and JavaScript.">
+<title>Calcura — Calculator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<div class="ambient ambient-one" aria-hidden="true"></div><div class="ambient ambient-two" aria-hidden="true"></div>
+<main class="page-shell">
+<header class="topbar">
+<a class="brand" href="#" aria-label="Calcura home"><span class="brand-mark">c</span><span>calcura<span class="brand-dot">.</span></span></a>
+<span class="project-label"><span class="status-dot"></span> OIBSIP · LEVEL 2</span>
+</header>
+<section class="intro">
+<p class="eyebrow">SIMPLE TOOLS. CLEAR THINKING.</p>
+<h1>Numbers, <span>made easy.</span></h1>
+<p class="intro-copy">A little space to work things out. Fast, focused, and ready whenever you are.</p>
+</section>
+<section class="calculator-wrap" aria-label="Calculator">
+<div class="calculator">
+<div class="calculator-head"><div><span class="calculator-kicker">STANDARD</span><h2>Calculator</h2></div>
+<button class="icon-button" id="historyToggle" type="button" aria-label="Toggle calculation history" title="Toggle history"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l3 2"/></svg></button></div>
+<div class="display" aria-live="polite" aria-atomic="true"><div class="expression" id="expression">Ready for your first calculation</div><div class="result" id="result">0</div></div>
+<div class="keypad" id="keypad">
+<button class="key key-utility" data-action="clear" type="button">AC</button><button class="key key-utility" data-action="delete" type="button" aria-label="Delete last digit">⌫</button><button class="key key-utility" data-action="percent" type="button">%</button><button class="key key-operator" data-operator="÷" type="button" aria-label="Divide">÷</button>
+<button class="key" data-number="7" type="button">7</button><button class="key" data-number="8" type="button">8</button><button class="key" data-number="9" type="button">9</button><button class="key key-operator" data-operator="×" type="button" aria-label="Multiply">×</button>
+<button class="key" data-number="4" type="button">4</button><button class="key" data-number="5" type="button">5</button><button class="key" data-number="6" type="button">6</button><button class="key key-operator" data-operator="−" type="button" aria-label="Subtract">−</button>
+<button class="key" data-number="1" type="button">1</button><button class="key" data-number="2" type="button">2</button><button class="key" data-number="3" type="button">3</button><button class="key key-operator" data-operator="+" type="button" aria-label="Add">+</button>
+<button class="key key-utility" data-action="sign" type="button" aria-label="Change sign">±</button><button class="key" data-number="0" type="button">0</button><button class="key" data-action="decimal" type="button">.</button><button class="key key-equals" data-action="equals" type="button" aria-label="Calculate result">=</button>
+</div>
+<div class="calculator-foot"><span><span class="keyboard-icon">⌨</span> Keyboard supported</span><button id="copyResult" type="button" class="copy-button">Copy result <span aria-hidden="true">↗</span></button></div>
+</div>
+<aside class="history-panel" id="historyPanel" aria-label="Calculation history" hidden><div class="history-head"><div><span class="calculator-kicker">YOUR WORK</span><h2>History</h2></div><button id="clearHistory" class="text-button" type="button">Clear</button></div><div id="historyList" class="history-list"><p class="history-empty">Your calculations will appear here.</p></div></aside>
+</section>
+<footer class="footer"><span>Designed to keep things clear.</span><span>HTML <b>·</b> CSS <b>·</b> JavaScript</span></footer>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body></html>
